@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PitalicaSeminar", "PitalicaSeminar\PitalicaSeminar.csproj", "{C6F78609-A3DE-4871-AAEC-AC3CDC18C2CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PitalicaSeminar", "PitalicaSeminar\PitalicaSeminar.csproj", "{C6F78609-A3DE-4871-AAEC-AC3CDC18C2CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PitalicaSeminar.DAL", "PitalicaSeminar.DAL\PitalicaSeminar.DAL.csproj", "{945FE2DB-DFA6-42B4-AC82-0D611E92AD1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PitalicaSeminar.GmailAuth", "PitalicaSeminar.GmailAuth\PitalicaSeminar.GmailAuth.csproj", "{CBD12D7E-0055-456B-BB2D-9C23B139A89C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PitalicaSeminar.Test", "PitalicaSeminar.Test\PitalicaSeminar.Test.csproj", "{4C3A12DA-EB73-494A-BB2D-0343790B54EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{C6F78609-A3DE-4871-AAEC-AC3CDC18C2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6F78609-A3DE-4871-AAEC-AC3CDC18C2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6F78609-A3DE-4871-AAEC-AC3CDC18C2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945FE2DB-DFA6-42B4-AC82-0D611E92AD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945FE2DB-DFA6-42B4-AC82-0D611E92AD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945FE2DB-DFA6-42B4-AC82-0D611E92AD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945FE2DB-DFA6-42B4-AC82-0D611E92AD1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBD12D7E-0055-456B-BB2D-9C23B139A89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBD12D7E-0055-456B-BB2D-9C23B139A89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBD12D7E-0055-456B-BB2D-9C23B139A89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBD12D7E-0055-456B-BB2D-9C23B139A89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3A12DA-EB73-494A-BB2D-0343790B54EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3A12DA-EB73-494A-BB2D-0343790B54EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3A12DA-EB73-494A-BB2D-0343790B54EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3A12DA-EB73-494A-BB2D-0343790B54EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

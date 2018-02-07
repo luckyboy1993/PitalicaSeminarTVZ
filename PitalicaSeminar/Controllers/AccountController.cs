@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PitalicaSeminar.DAL.Entities;
 using PitalicaSeminar.Models;
 using PitalicaSeminar.Models.AccountViewModels;
 using PitalicaSeminar.Services;
@@ -24,7 +25,6 @@ namespace PitalicaSeminar.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
-
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
@@ -35,6 +35,7 @@ namespace PitalicaSeminar.Controllers
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            //_pitalicaDbContext = new PitalicaDbContext();
         }
 
         [TempData]
@@ -220,8 +221,10 @@ namespace PitalicaSeminar.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                
                 var result = await _userManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

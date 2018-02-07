@@ -1,0 +1,88 @@
+﻿@model PitalicaSeminar.DAL.Entities.User
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SchoolId" class="control-label"></label>
+                <input asp-for="SchoolId"  id="SchoolId" class="form-control" asp-items="ViewBag.SchoolId">
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="StringUserID" class="control-label"></label>
+                <input asp-for="StringUserID" id="StringUserID" class="form-control" />
+                <span asp-validation-for="StringUserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" id="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" id="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+<script language="javascript" type="text/javascript">
+    function a1_onclick(schoolid, userid, stringid, username) {
+        var schoolid = document.getElementById(id);
+        var userid = document.getElementById(id);
+        var name = document.getElementById(id);
+        var name = document.getElementById(id);
+        var userId = name;
+
+        onclick = "return a1_onclick('SchoolId','StringUserID','UserName', 'Password')" 
+    }
+</script>
+
+    <script>
+        function sendData(userName) {
+            var userName = document.getElementById('InputUserName').innerHTML;
+            var userId = UserManager.FindByNameAsync(document.getElementById("demo"));
+            var object = @Model;
+            //get the input value
+            $.ajax({
+                //the url to send the data to
+                url: "ajax/url.ajax.php",
+                //the data to send to
+                data: { someInput: $someInput },
+                //type. for eg: GET, POST
+                type: "POST",
+                //datatype expected to get in reply form server
+                dataType: "json",
+                //on success
+                success: function (data) {
+                    //do something after something is recieved from php
+                },
+                //on error
+                error: function () {
+                    //bad request
+                }
+            });
+        }
+
+    </script>
+}

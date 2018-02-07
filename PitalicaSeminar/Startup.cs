@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PitalicaSeminar.Data;
 using PitalicaSeminar.Models;
 using PitalicaSeminar.Services;
+using PitalicaSeminar.DAL.Entities;
 
 namespace PitalicaSeminar
 {
@@ -27,7 +28,10 @@ namespace PitalicaSeminar
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("UsersConnection")));
+
+            services.AddDbContext<PitalicaDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("EntitiesConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
